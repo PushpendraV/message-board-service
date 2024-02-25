@@ -8,6 +8,10 @@ CORS(app)  # This will enable CORS for all routes
 # Dummy data for storing messages
 messages = []
 
+@app.route('/')
+def hello():
+    return "This is python flask app"
+
 @app.route('/messages', methods=['GET'])
 def get_messages():
     return jsonify(messages), 200
