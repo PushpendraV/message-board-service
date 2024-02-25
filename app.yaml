@@ -1,16 +1,8 @@
-runtime: python39  
+runtime: python39
 
-env_variables:
- 
-  VARIABLE_NAME: "value"
 
-entrypoint: gunicorn -b :$PORT main:app
-
+service: python-app
 handlers:
- 
-  - url: /static
-    static_dir: static
+  - url: /.*
+    script: main.app 
 
-  
-  - url: .*
-    script: auto
