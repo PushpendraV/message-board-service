@@ -32,4 +32,5 @@ def clear_messages():
     messages = []  # Clear all messages
     return jsonify({'message': 'All messages cleared successfully'}), 200
 
-
+if __name__ == '__main__':
+    app.run(debug=True)
